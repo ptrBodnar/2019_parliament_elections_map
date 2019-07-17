@@ -14,7 +14,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 }).addTo(map);
 
 
-d3.json("/../all_tvo.geojson").then(function(data) {
+d3.json("all_tvo.geojson").then(function(data) {
 	var geojson;
 
 	geojson = L.geoJson(data, {
