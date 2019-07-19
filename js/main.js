@@ -12,7 +12,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 	id: 'mapbox.light'
 }).addTo(map);
 
-
 //var my_layer = d3.json("all_tvo.geojson").then(function(data) {
 // 	var geojson;
 //
@@ -157,7 +156,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 var promise = $.getJSON("all_tvo.geojson");
 
 promise.then(function(data) {
-	console.log("running the promise")
 	function customPopupContent(layer) {
 		// need to add functionality for TVO's with two "winners"
 		//  want the popup to display both, side by side, !without probability!
@@ -169,7 +167,6 @@ promise.then(function(data) {
 		var factions = layer.feature.properties.fraction;
 
 		if (layer.feature.properties.winner.length>1) {
-
 			text= "<table>" +
 							"<tr>" +
 								"<th>ТВО</th>" +
@@ -364,7 +361,7 @@ promise.then(function(data) {
 
   // L.control.layers(null, partyLayers,{collapsed:false}).addTo(map);
 
-	L.control.groupedLayers(null, groupedOverlays,{collapsed:false, groupCheckboxes:true}, console.log("just added")).addTo(map);
+	L.control.groupedLayers(null, groupedOverlays,{collapsed:false, groupCheckboxes:true}).addTo(map);
 	nonGovControlled.addTo(map)
 
 	// for (party in groupedOverlays['Партії']) {
